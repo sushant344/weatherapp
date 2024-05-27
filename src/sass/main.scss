@@ -1,0 +1,150 @@
+@import "./var.scss";
+@import "./common.scss";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Noto+Sans:ital@1&display=swap');
+
+body{
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: $text-color;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.main_container{
+    display: inline-block;
+    height: auto;
+    width: auto;
+}
+
+.box{
+    @include flex_column;
+    background-color: rgb(31, 31, 31);
+    padding: 40px;
+    height: 100%;
+    width: 60vw;
+}
+
+h1{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.headerbar{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    .search-container{
+        background-color: $inner-box-bg-color;
+        width: 40%;
+
+        .MuiFormControl-root{
+            width: 100%;
+        }
+
+        #input-with-icon-adornment{
+            color: $text-color;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        #input-with-icon-adornment:placeholder-shown{
+            color: $text-color;
+        }
+    }
+
+    .temp_buttons{
+        @include flex_row;
+        gap: 5px;
+
+        & button{
+            height: 50px;
+            width: 3rem;
+            background-color: $inner-box-bg-color;
+            border: none;
+            color: $text-color;
+            font-family: 'Josefin Sans', sans-serif;
+            cursor: pointer;
+
+        }
+        & button:hover{
+            background-color: $box-bg-color;
+        }
+    }
+}
+
+
+.temp_container{
+    @include flex_column;
+    width: 100%;
+    margin-top: 40px;
+
+    & h1{
+        margin-bottom: 0;
+        letter-spacing: 0.1rem;
+    }
+
+    & .weather_condition{
+        @include flex_column;
+        margin-top: 10px;
+        gap: 15px;
+
+        & .weather_condition_text{
+            @include flex_row;
+
+            & #weather_condition_textid{
+                @include flex_column;
+                height: 2.2rem;
+                color: $text-color;
+                font-family: 'Josefin Sans', sans-serif;
+                border: none;
+                background-color: $inner-box-bg-color;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+
+
+.temp_conditions{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 80px 80px;
+    grid-gap: 15px;
+    width: 100%;
+
+    .temp_condition_items{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: $inner-box-bg-color;
+        padding: 1rem;
+
+        & .temp_icon{
+            width: 20%;
+        }
+
+        .temp_item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 80%;
+            gap: 7px;
+
+            & h6{
+                font-size: 1.1rem;
+                letter-spacing: 0.03rem;
+                font-weight: 400;
+                margin: 0;
+            }
+            & p{
+                margin: 0;
+                font-size: 0.9rem;
+            }
+        }
+
+    }
+}
