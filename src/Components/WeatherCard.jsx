@@ -21,6 +21,8 @@ import lightrainSun from "../Images/light_rain_sun.png";
 import lightrainMoon from "../Images/light_rain_moon.png";
 import snow from "../Images/snow.webp";
 import error from "../Images/error-icon.png";
+const apiKey = process.env.REACT_APP_API_KEY;
+// import.meta.env.VITE_API_KEY 
 
 export default function WeatherCard() {
   const [search, setSearch] = useState("mumbai");
@@ -33,7 +35,6 @@ export default function WeatherCard() {
   let units = "metric";
 
   const fetchapi = async () => {
-    const apiKey = "3b1117c6c62e06885a4eba3139fac7bd";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=${units}&appid=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
